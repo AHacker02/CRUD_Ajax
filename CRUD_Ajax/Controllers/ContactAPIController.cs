@@ -64,7 +64,7 @@ namespace CRUD_Ajax.Controllers
                 return NotFound("Contact not found");
             }
 
-            if (!_contactsContext.Contacts.Any(x => x.PhoneNumber == updatedContact.PhoneNumber))
+            if (_contactsContext.Contacts.Any(x => x.PhoneNumber == updatedContact.PhoneNumber))
             {
                 return BadRequest("Phone number already exists");
             }
