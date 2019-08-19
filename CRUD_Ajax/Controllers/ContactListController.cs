@@ -9,6 +9,11 @@ namespace CRUD_Ajax.Controllers
 {
     public class ContactListController : Controller
     {
+
+        /// <summary>
+        /// Method to generate view
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Index()
         {

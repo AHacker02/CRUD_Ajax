@@ -1,4 +1,5 @@
-﻿function Get() {
+﻿//GET method calls the url and receives data
+function Get() {
     $.ajax({
         url: "https://localhost:44369/api/contacts/allcontacts",
         type: "GET",
@@ -15,6 +16,7 @@
     });
 }
 
+//POST method generates object from form and posts to the url to create new contact
 function Post() {
     var contact = {
         Id: $('#Id').val(),
@@ -39,6 +41,7 @@ function Post() {
     });
 }
 
+//PUT method is used to update a contact
 function Put() {
     var contact = {
         Id:$('#Id').val(),
@@ -65,6 +68,7 @@ function Put() {
     });
 }
 
+//DELETE method is used to delete the contact
 function Delete(id) {
 
     $.ajax({

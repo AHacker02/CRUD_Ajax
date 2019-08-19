@@ -20,6 +20,10 @@ namespace CRUD_Ajax.Controllers
             _contactsContext = contactsContext;
         }
 
+        /// <summary>
+        /// Returns all the contacts in database
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("allcontacts")]
         public IActionResult GetAllContacts()
@@ -32,6 +36,11 @@ namespace CRUD_Ajax.Controllers
             return NotFound("No contacts Found");
         }
 
+        /// <summary>
+        /// Creates new contact
+        /// </summary>
+        /// <param name="newContact"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("addcontact")]
         public IActionResult AddContact(ContactModel newContact)
@@ -54,7 +63,11 @@ namespace CRUD_Ajax.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Update contact on the basis of id
+        /// </summary>
+        /// <param name="updatedContact"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("updatecontact")]
         public IActionResult UpdateContact(ContactModel updatedContact)
@@ -82,6 +95,11 @@ namespace CRUD_Ajax.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete contact on the basis of id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("deletecontact")]
         public IActionResult DeleteContact(int id)

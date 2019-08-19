@@ -45,7 +45,7 @@
     <div id="contactForm" class="modal modal-fixed-footer">
         <div class="modal-content">
             <div class="row">
-                <form class="col s12">
+                <form class="col s12" id="contact_form">
                     <input id="Id" type="hidden" value="0">
                     <div class="row">
                         <div class="input-field col s6">
@@ -88,8 +88,10 @@
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
         <script src="~/js/CRUDAjax.js"></script>
         <script src="~/js/contact.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 
     </environment>
     <environment exclude="Development">
@@ -100,8 +102,11 @@
                 integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
         </script>
         <script src="~/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
         <script src="~/js/CRUDAjax.js"></script>
         <script src="~/js/contact.js"></script>
+
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 
 
     </environment>
