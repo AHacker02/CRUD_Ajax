@@ -256,6 +256,7 @@ var Colors = [
     '#263238',
     '#000000',
 ];
+var Host = "https://"+$('#baseUrl').val();
 
 //Initialize components on document ready
 $(document).ready(function () {

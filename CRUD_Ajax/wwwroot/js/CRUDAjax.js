@@ -1,7 +1,7 @@
 ﻿//GET method calls the url and receives data
 function Get() {
     $.ajax({
-        url: "https://localhost:44369/api/contacts/allcontacts",
+        url: Host+"/api/contacts/allcontacts",
         type: "GET",
         contentType: "application/json;charset=utf-8",
         dataType: "json",
@@ -28,7 +28,7 @@ function Post() {
         DOB: $('#dob').val()
     };
     $.ajax({
-        url: "https://localhost:44369/api/contacts/addcontact",
+        url: Host+"/api/contacts/addcontact",
         data: JSON.stringify(contact),
         type: "POST",
         contentType: "application/json;charset=utf-8",
@@ -54,7 +54,7 @@ function Put() {
     };
 
     $.ajax({
-        url: "https://localhost:44369/api/contacts/updatecontact",
+        url: Host+"/api/contacts/updatecontact",
         data: JSON.stringify(contact),
         type: "PUT",
         contentType: "application/json;charset=utf-8",
@@ -72,7 +72,7 @@ function Put() {
 function Delete(id) {
 
     $.ajax({
-        url: "https://localhost:44369/api/contacts/deletecontact?id=" + id,
+        url: Host+"/api/contacts/deletecontact?id=" + id,
         type: "DELETE",
         contentType: "application/json;charset=UTF-8",
         success: function (result) {

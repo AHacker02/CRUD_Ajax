@@ -17,7 +17,8 @@ namespace CRUD_Ajax.DataAccess
                 using (var context = new ContactsContext(
                     serviceScope.ServiceProvider.GetRequiredService<DbContextOptions<ContactsContext>>()))
                 {
-                    // Look for any movies.
+                    context.Database.EnsureCreated();
+                    // Look for any contacts.
                     if (context.Contacts.Any())
                     {
                         return;   // DB has been seeded
@@ -31,17 +32,16 @@ namespace CRUD_Ajax.DataAccess
                             DOB = DateTime.Parse("02/05/1996"),
                             Email = "arghyag5@gmail.com",
                             PhoneNumber = 8017600538
-                        },
-                    new ContactModel
-                        {
-                            FirstName = "Arghya",
-                            LastName = "Ghosh",
-                            DOB = DateTime.Parse("02/05/1996"),
-                            Email = "arghyag5@gmail.com",
-                            PhoneNumber = 8017600538
                         }
                     );
-                    context.SaveChanges();
+                    try
+                    {
+                        context.SaveChanges();
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
                 }
             }
             

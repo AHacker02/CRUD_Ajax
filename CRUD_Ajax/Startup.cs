@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using CRUD_Ajax.DataAccess;
 using Microsoft.AspNetCore.Builder;
@@ -27,7 +28,11 @@ namespace CRUD_Ajax
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ContactsContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlite("Filename=./contact.db", option =>
+                {
+                    option.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
+                }));
 
             services.Configure<CookiePolicyOptions>(options =>
             {
